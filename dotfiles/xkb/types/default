@@ -1,0 +1,96 @@
+default xkb_types "default" {
+    // This name is hardcoded in libxkbcommon/src/xkbcomp/symbols.c:FindAutomaticType
+    type "ONE_LEVEL" {
+	modifiers = None;
+	map[None] = 1;
+	level_name[1]= "Any";
+    };
+
+    // This name is hardcoded in libxkbcommon/src/xkbcomp/symbols.c:FindAutomaticType
+    type "TWO_LEVEL" {
+	modifiers = Shift;
+	map[None] = 1;
+	map[Shift] = 2;
+	level_name[1] = "Base";
+	level_name[2] = "Shift";
+    };
+
+    // This name is hardcoded in libxkbcommon/src/xkbcomp/symbols.c:FindAutomaticType
+    type "ALPHABETIC" {
+	modifiers = Shift;
+	map[None] = 1;
+	map[Shift] = 2;
+	level_name[1] = "Base";
+	level_name[2] = "Shift";
+    };
+
+    type "ALT" {
+        modifiers = Mod1;
+        map[None] = 1;
+        map[Mod1] = 2;
+        level_name[1] = "Base";
+        level_name[2] = "Alt";
+    };
+
+    type "CTRL" {
+        modifiers = Control;
+        map[None] = 1;
+        map[Control] = 2;
+        level_name[1] = "Base";
+        level_name[2] = "Ctrl";
+    };
+
+    type "CTRL+ALT" {
+        modifiers = Control+Mod1;
+        map[None] = 1;
+        map[Control+Mod1] = 2;
+        level_name[1] = "Base";
+        level_name[2] = "Ctrl+Alt";
+    };
+
+    type "LEVEL4" {
+        modifiers = Shift+Mod3;
+	map[None] = 1;
+	map[Shift] = 2;
+	map[Mod3] = 3;
+	map[Mod3+Shift] = 4;
+    };
+
+    type "LEVEL8" {
+        modifiers = Shift+Mod3+Mod5;
+	map[None] = 1;
+	map[Shift] = 2;
+	map[Mod5] = 3;
+	map[Shift+Mod5] = 4;
+	map[Mod3] = 5;
+	map[Shift+Mod3] = 6;
+	map[Mod3+Mod5] = 7;
+	map[Shift+Mod3+Mod5] = 8;
+    };
+
+    // This name is hardcoded in libxkbcommon/src/xkbcomp/symbols.c:FindAutomaticType
+    type "FOUR_LEVEL_ALPHABETIC" {
+	modifiers = Shift+Mod5;
+	map[None] = 1;
+	map[Shift] = 2;
+	map[Mod5] = 3;
+	map[Shift+Mod5] = 4;
+	level_name[1] = "Base";
+	level_name[2] = "Shift";
+	level_name[3] = "AltGr";
+	level_name[4] = "Shift+AltGr";
+    };
+
+    // This name is hardcoded in libxkbcommon/src/xkbcomp/symbols.c:FindAutomaticType
+    type "FOUR_LEVEL_SEMIALPHABETIC" {
+	modifiers = Shift+Mod5;
+	map[None] = 1;
+	map[Shift] = 2;
+	map[Mod5] = 3;
+	map[Shift+Mod5] = 4;
+	level_name[1] = "Base";
+	level_name[2] = "Shift";
+	level_name[3] = "AltGr";
+	level_name[4] = "Shift+AltGr";
+    };
+};

@@ -1,0 +1,41 @@
+default xkb_compatibility "default" {
+virtual_modifiers Fake;
+    // disable repeat for all interpret matches
+    interpret.repeat = False;
+
+    interpret Shift_L {
+        action = SetMods(modifiers=Shift);
+    };
+    interpret Shift_R {
+        action = SetMods(modifiers=Shift);
+    };
+
+    interpret Control_L {
+        action = SetMods(modifiers=Control);
+    };
+    interpret Control_R {
+        action = SetMods(modifiers=Control);
+    };
+
+    interpret Alt_L {
+        action = SetMods(modifiers=Mod1);
+    };
+    interpret Alt_R {
+        action = SetMods(modifiers=Mod1);
+    };
+
+    interpret ISO_Level3_Shift {
+        action = SetMods(modifiers=Mod5);
+    };
+
+    interpret Super_L {
+        action = SetMods(modifiers=Mod4);
+    };
+    interpret Super_R {
+        action = SetMods(modifiers=Mod4);
+    };
+
+    interpret ISO_Group_Shift {
+        action = SetMods(modifiers=Mod3);
+    };
+};

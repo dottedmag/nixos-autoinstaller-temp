@@ -1,0 +1,195 @@
+default xkb_keycodes "evdev" {
+    minimum = 8;
+    maximum = 255;
+
+    // Keys below are limited to 4 symbols due to keymap being sent to
+    // Xwayland that does not understand lower names
+
+    <ESC> = 9;
+    <1> = 10;
+    <2> = 11;
+    <3> = 12;
+    <4> = 13;
+    <5> = 14;
+    <6> = 15;
+    <7> = 16;
+    <8> = 17;
+    <9> = 18;
+    <0> = 19;
+    <MNUS> = 20; // MINUS
+    <EQ> = 21; // EQUAL
+    <BS> = 22; // BACKSPACE
+    <TAB> = 23;
+    <Q> = 24;
+    <W> = 25;
+    <E> = 26;
+    <R> = 27;
+    <T> = 28;
+    <Y> = 29;
+    <U> = 30;
+    <I> = 31;
+    <O> = 32;
+    <P> = 33;
+    <LBRC> = 34; // LEFTBRACE
+    <RBRC> = 35; // RIGHTBRACE
+    <ENTR> = 36; // ENTER
+    <LCTL> = 37; // LEFTCTRL
+    <A> = 38;
+    <S> = 39;
+    <D> = 40;
+    <F> = 41;
+    <G> = 42;
+    <H> = 43;
+    <J> = 44;
+    <K> = 45;
+    <L> = 46;
+    <SEMI> = 47; // SEMICOLON
+    <APOS> = 48; // APOSTROPHE
+    <GRAV> = 49; // GRAVE
+    <LSH> = 50; // LEFTSHIFT
+    <BSL> = 51; // BACKSLASH
+    <Z> = 52;
+    <X> = 53;
+    <C> = 54;
+    <V> = 55;
+    <B> = 56;
+    <N> = 57;
+    <M> = 58;
+    <COMM> = 59; // COMMA
+    <DOT> = 60;
+    <SLSH> = 61; // SLASH
+    <RSH> = 62; // RIGHTSHIFT
+    <KPAS> = 63; // KPASTERISK
+    <LALT> = 64; // LEFTALT
+    <SPCE> = 65; // SPACE
+    <CAPS> = 66; // CAPSLOCK
+    <F1> = 67;
+    <F2> = 68;
+    <F3> = 69;
+    <F4> = 70;
+    <F5> = 71;
+    <F6> = 72;
+    <F7> = 73;
+    <F8> = 74;
+    <F9> = 75;
+    <F10> = 76;
+    <NMLK> = 77; // NUMLOCK
+    <SCLK> = 78; // SCROLLLOCK
+    <KP7> = 79;
+    <KP8> = 80;
+    <KP9> = 81;
+    <KPMI> = 82; // KPMINUS
+    <KP4> = 83;
+    <KP5> = 84;
+    <KP6> = 85;
+    <KPPL> = 86; // KPPLUS
+    <KP1> = 87;
+    <KP2> = 88;
+    <KP3> = 89;
+    <KP0> = 90;
+    <KPDT> = 91; // KPDOT
+    // 84(92) unassigned by evdev
+    // <ZENKAKUHANKAKU> = 93;
+    // <102ND> = 94;
+    <F11> = 95;
+    <F12> = 96;
+    // <RO> = 97;
+    // <KATAKANA> = 98;
+    // <HIRAGANA> = 99;
+    // <HENKAN> = 100;
+    // <KATAKANAHIRAGANA> = 101;
+    // <MUHENKAN> = 102;
+    // <KPJCOMMA> = 103;
+    <KPEN> = 104; // KPENTER
+    <RCTL> = 105; // RIGHTCTRL
+    <KPSL> = 106; // KPSLASH
+    <SSRQ> = 107; // SYSRQ
+    <RALT> = 108; // RIGHTALT
+    // <LINEFEED> = 109;
+    // Apple Keyboard: Fn+Left
+    // Librem 13 v3: Fn+Left
+    <HOME> = 110;
+    <UP> = 111;
+    // Apple Keyboard: Fn+Up
+    // Librem 13 v3: Fn+Up
+    <PGUP> = 112; // PAGEUP
+    <LEFT> = 113;
+    <RGHT> = 114; // RIGHT
+    // Apple Keyboard: Fn+Right
+    // Librem 13 v3: Fn+Right
+    <END> = 115;
+    <DOWN> = 116;
+    // Apple Keyboard: Fn+Return
+    // Librem 13 v3: Fn+Down
+    <PGDN> = 117; // PAGEDOWN
+    // Apple Keyboard: Fn+Return
+    <INS> = 118; // INSERT
+    // Apple Keyboard: Fn+Delete
+    <DEL> = 119; // DELETE
+    // <MACRO> = 120;
+    <MUTE> = 121;
+    <VLDN> = 122; // VOLUMEDOWN
+    <VLUP> = 123; // VOLUMEUP
+    <PWR> = 124; // POWER
+    // <KPEQUAL> = 125;
+    // <KPPLUSMINUS> = 126;
+    // Librem 13 v3: Fn+Delete
+    <PAUS> = 127; // PAUSE
+    // Apple Keyboard: F3 (Expose)
+    <SCAL> = 128; // SCALE
+    // <KPCOMMA> = 129;
+    // <HANGEUL> = 130;
+    // <HANJA> = 131;
+    // <YEN> = 132;
+    // Apple Keyboard: Left Command
+    // Librem 13 v3: Librem key
+    <LMET> = 133; // LEFTMETA
+    // Apple Keyboard: Right Command
+    <RMET> = 134; // RIGHTMETA
+    // "Menu"
+    <CMPS> = 135; // COMPOSE
+
+    <CALC> = 148;
+
+    // Librem 13 v3: Fn+Esc
+    <SLP> = 150; // SLEEP
+
+    // Apple Keyboard: Eject
+    <EJE> = 169; // EJECT
+
+    <NSNG> = 171; // NEXTSONG
+    <PLPS> = 172; // PLAYPAUSE
+    <PSNG> = 173; // PREVIOUSSONG
+
+    <HMPG> = 180; // HOMEPAGE
+
+    <F21> = 199; // F21
+
+    // Apple Keyboard: F4 (Dashboard)
+    <DASH> = 212; // DASHBOARD
+
+    <BRDN> = 232; // BRIGHTNESSDOWN
+    <BRUP> = 233; // BRIGHTNESSUP
+    // Librem 13 v3: Fn+F11
+    <MDIA> = 234; // MEDIA
+
+    <KBDN> = 237; // KBDILLUMDOWN
+    <KBUP> = 238; // KBDILLUMUP
+
+    // Librem 13 v3: Fn+F3
+    <WLAN> = 246;
+
+    // Xwayland does not understand keycodes > 255
+    // <FN> = 472;
+
+    // Weird Librem 13 v3 keys
+    // FN+F1 toggles touchpad, not reported
+    // FN+F7 translated to LEFTMETA+P
+    // FN+F8 toggles screen, not reported
+    // FN+F10 changes keyboard backlight, not reported
+    // FN+F12 toggles Bluetooth, not reported
+
+    indicator 1  = "Caps Lock";
+    indicator 2  = "Num Lock";
+    indicator 3  = "Scroll Lock";
+};

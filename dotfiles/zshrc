@@ -1,0 +1,60 @@
+# -*- mode: sh -*-
+
+alias ls='ls --color=auto --classify --human-readable --size --group-directories-first --dereference-command-line-symlink-to-dir'
+
+alias grep='grep --color=auto'
+
+if command -v colordiff >/dev/null; then
+  alias diff=colordiff
+fi
+
+if command -v lessfile >/dev/null; then
+  eval $(lessfile)
+fi
+
+alias less='less --ignore-case --line-numbers --QUIET --RAW-CONTROL-CHARS --no-init --chop-long-lines'
+
+alias gdb='gdb --quiet'
+
+alias gzip='gzip --rsyncable'
+
+if command -v e >/dev/null; then
+  EDITOR=e
+elif command -v nano >/dev/null; then
+  EDITOR=nano
+fi
+
+HISTFILE=$HOME/.zhist
+HISTSIZE=100000
+SAVEHIST=100000
+
+slashre=/; WORDCHARS=${WORDCHARS/$slashre}
+
+# Disable menu completion
+setopt no_auto_menu
+
+setopt extended_glob
+
+setopt no_beep
+
+setopt share_history
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+setopt extended_history
+setopt no_bang_hist
+setopt hist_ignore_space
+
+function prompt() {
+  local u
+  local c=blue
+  if [ $USERNAME != dottedmag ]; then
+    u=$USERNAME@
+  fi
+  if [ $UID = 0 ]; then
+    c=red
+  fi
+  PROMPT="%(?..%F{red}%?%f )[%F{$c}$u%m%f:%~]%# "
+  unset RPS1
+}
+
+prompt

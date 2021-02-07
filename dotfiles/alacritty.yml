@@ -1,0 +1,12 @@
+window:
+  dynamic_padding: true
+
+colors:
+  primary:
+    background: '#ffffff'
+    foreground: '#000000'
+
+font:
+  normal:
+    family: Liberation Mono
+  size: 13.0

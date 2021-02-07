@@ -1,0 +1,79 @@
+xkb_symbols "librem" {
+    // Swap Alt/Win to match Apple layout
+    key <LMET> { [ Alt_L ] };
+    key <LALT> { [ Super_L ] };
+
+    // Second group is on right Alt (next to Space)
+    key <RALT> { [ ISO_Group_Shift ] };
+
+    // Additional symbols are on Menu (next to next to Space)
+    key <CMPS> { [ ISO_Level3_Shift ] };
+};
+
+xkb_symbols "magic-keyboard" {
+    // "Multimedia" keys are sent by default, F-keys are sent as Fn+FNN. Reverse.
+
+    key <BRDN> { type="CTRL+ALT", symbols[1]=[ F1, XF86_Switch_VT_1 ] };
+    key <BRUP> { type="CTRL+ALT", symbols[1]=[ F2, XF86_Switch_VT_2 ] };
+    key <SCAL> { type="CTRL+ALT", symbols[1]=[ F3, XF86_Switch_VT_3 ] };
+    key <DASH> { type="CTRL+ALT", symbols[1]=[ F4, XF86_Switch_VT_4 ] };
+    key <KBDN> { type="CTRL+ALT", symbols[1]=[ F5, XF86_Switch_VT_5 ] };
+    key <KBUP> { type="CTRL+ALT", symbols[1]=[ F6, XF86_Switch_VT_6 ] };
+    key <PSNG> { type="CTRL+ALT", symbols[1]=[ F7, XF86_Switch_VT_7 ] };
+    key <PLPS> { type="CTRL+ALT", symbols[1]=[ F8, XF86_Switch_VT_8 ] };
+    key <NSNG> { type="CTRL+ALT", symbols[1]=[ F9, XF86_Switch_VT_9 ] };
+    key <MUTE> { type="CTRL+ALT", symbols[1]=[ F10, XF86_Switch_VT_10 ] };
+    key <VLDN> { type="CTRL+ALT", symbols[1]=[ F11, XF86_Switch_VT_11 ] };
+    key <VLUP> { type="CTRL+ALT", symbols[1]=[ F12, XF86_Switch_VT_12 ] };
+
+    key <F1> { [ XF86MonBrightnessDown ] };
+    key <F2> { [ XF86MonBrightnessUp ] };
+    key <F3> { [ XF86LaunchA ] };
+    key <F4> { [ XF86LaunchB ] };
+    key <F5> { [ XF86KbdBrightnessDown ] };
+    key <F6> { [ XF86KbdBrightnessUp ] };
+    key <F7> { [ XF86AudioPrev ] };
+    key <F8> { [ XF86AudioPlay ] };
+    key <F9> { [ XF86AudioNext ] };
+    key <F10> { [ XF86AudioMute ] };
+    key <F11> { [ XF86AudioLowerVolume ] };
+    key <F12> { [ XF86AudioRaiseVolume ] };
+
+    // Second group is on right Command (next to Space)
+    key <RMET> { [ ISO_Group_Shift ] };
+
+    // Additional symbols are on right Option (next to next to Space)
+    key <RALT> { [ ISO_Level3_Shift ] };
+};
+
+xkb_symbols "sculpt" {
+    // Swap Alt/Win to match Apple layout
+    key <LMET> { [ Alt_L ] };
+    key <LALT> { [ Super_L ] };
+
+    // Second group is on right Alt (next to Space)
+    key <RALT> { [ ISO_Group_Shift ] };
+
+    // Additional symbols are on Menu (next to next to Space)
+    key <CMPS> { [ ISO_Level3_Shift ] };
+};
+
+xkb_symbols "surface-ergo" {
+    // Swap Alt/Win to match Apple layout
+    key <LMET> { [ Alt_L ] };
+    key <LALT> { [ Super_L ] };
+
+    // Second group is on right Alt (next to Space)
+    key <RALT> { [ ISO_Group_Shift ] };
+
+    // Additional symbols are on right Win (next to next to Space)
+    key <RMET> { [ ISO_Level3_Shift ] };
+};
+
+xkb_symbols "vortexrace3" {
+    // Second group is on right Cmd (next to Space) - reported as right Alt
+    key <RALT> { [ ISO_Group_Shift ] };
+
+    // Additional symbols are on right Alt - next to next to Space, reported as right Cmd
+    key <RMET> { [ ISO_Level3_Shift ] };
+};

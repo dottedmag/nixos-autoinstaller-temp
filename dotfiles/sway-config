@@ -1,0 +1,202 @@
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+# Home row direction keys, like Emacs
+set $left b
+set $down n
+set $up p
+set $right f
+
+set $term alacritty
+
+set $menu dmenu-wl_path | dmenu-wl -fn "Liberation Mono-15.3" -m $(swaymsg -t get_outputs | jq -r '.[map(.focused) | index(true)].name') | xargs swaymsg exec --
+
+### LG 34WK95U-W
+
+output "Goldstar Company Ltd LG HDR 5K 0x00000767" bg ~/.config/sway/backgrounds/lg34.jpg fill
+
+# Temporary until 5120x2160@60Hz problem is solved
+output "Goldstar Company Ltd LG HDR 5K 0x00000767" mode 5120x2160@30Hz
+
+### LG 27UD68-W
+
+output "Goldstar Company Ltd LG Ultra HD 0x0000797E" bg ~/.config/sway/backgrounds/lg27.jpg fill
+
+### Librem 13v3
+
+output "Unknown 0x06BE 0x00000000" bg ~/.config/sway/backgrounds/librem.jpg fill
+
+### Thinkpad P1
+
+output "Unknown 0x42EB 0x00000000" bg ~/.config/sway/backgrounds/p1.jpg fill
+
+### Fallback
+
+output "*" bg ~/.config/sway/backgrounds/fallback.jpg fill
+
+###
+
+input "*" {
+  xkb_layout default
+}
+
+# This will need further tweaking if there are other keyboards reported like that
+input "1:1:AT_Translated_Set_2_keyboard" {
+  xkb_variant librem
+}
+
+input "76:615:Apple_Magic_Keyboard" {
+  xkb_variant magic-keyboard
+}
+
+# Microsoft Sculpt Keyboard
+input "1118:1957:Microsoft_Microsoft___Nano_Tranceiver_v2.1" {
+  xkb_variant sculpt
+}
+
+# Microsoft Surface Ergonomic Keyboard
+input "1118:2071:Ergonomic_Keyboard" {
+  xkb_variant surface-ergo
+}
+
+# Vortex Race 3
+input "1241:402:USB-HID_Keyboard" {
+  xkb_variant vortexrace3
+}
+
+# Start a terminal
+bindsym $mod+Return exec $term
+
+# Kill focused window
+# bindsym $mod+Shift+q kill
+
+# Start your launcher
+bindsym $mod+r exec $menu
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# Switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+bindsym $mod+h splith
+bindsym $mod+v splitv
+
+# Switch the current container between different layout styles
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Make the current focus fullscreen
+bindsym $mod+Shift+return fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
+
+# Move focus to the parent container
+bindsym $mod+a focus parent
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+mode "resize" {
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+d mode "resize"
+
+font "pango:Liberation Sans 13"
+title_align center
+
+bar {
+    font "Liberation Sans 13"
+    position top
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    # status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
+
+    colors {
+        statusline #000000
+        background #f6f6f6
+	focused_workspace #b0b0b0 #d3d3d3 #000000
+        inactive_workspace #b0b0b0 #f6f6f6 #bbbbbb
+    }
+}
+
+# Tabbed windows by default
+workspace_layout tabbed
+
+# When reaching end of group do not move focus to another output/workspace
+focus_wrapping workspace
+
+# Start Xwayland on startup to avoid a delay on a first run of dmenu
+xwayland force
+
+set $focbg #d3d3d3
+set $uftxt #777777
+
+#                       title border|title bg|title text|indicator|child_border
+client.focused          #b0b0b0      $focbg   #000000    #2e9ef4   #b0b0b0
+client.unfocused        #b0b0b0      #f6f6f6  $uftxt     #292d2e   #b0b0b0
+client.focused_inactive #b0b0b0      $focbg   $uftxt     #2e9ef4   #b0b0b0
+
+default_border normal 1

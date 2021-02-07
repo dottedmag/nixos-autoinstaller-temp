@@ -1,0 +1,1 @@
+(setq gofmt-command "goimports")

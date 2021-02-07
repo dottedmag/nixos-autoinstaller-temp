@@ -1,0 +1,16 @@
+! $variants = librem magic-keyboard sculpt surface-ergo vortexrace
+
+! model = keycodes
+  * = evdev
+
+! model layout = symbols
+  * * = layouts(default)
+
+! model variant   = symbols
+  * $variants = +variants(%v)
+
+! model = types
+  * = default
+
+! model = compat
+  * = default

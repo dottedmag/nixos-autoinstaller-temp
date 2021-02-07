@@ -1,0 +1,17 @@
+[diff]
+        renames = copy
+        algorithm = histogram
+[merge]
+        ff = only
+[push]
+        default = simple
+[core]
+        precomposeUnicode = true
+[credential]
+        helper = store
+[protocol]
+        version = 2
+[user]
+	name = Misha Gusarov
+[include]
+	path = .gitconfig.local
